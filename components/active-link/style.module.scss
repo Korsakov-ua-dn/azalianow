@@ -1,0 +1,12 @@
+.Menu__link {
+    height: 40px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    color: var(--color-blue);
+}
+.Menu__link_active {
+    background-color: var(--color-blue);
+    color: #ffffff;
+}

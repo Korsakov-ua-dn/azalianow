@@ -1,0 +1,34 @@
+.Pagination{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+}
+
+.Pagination__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 30px;
+    min-width: 30px;
+}
+
+.Pagination__item:hover{
+    background: #E1E1E1;
+    border-radius: var(--border-radius);
+}
+
+.Pagination__item_active,
+.Pagination__item_active:hover{
+    background: var(--color-blue);
+    border-radius: var(--border-radius);
+    color: #ffffff;
+    pointer-events: none;
+}
+
+.Pagination__item_split,
+.Pagination__item_split:hover{
+    background: transparent;
+    cursor: default;
+    color: var(--font-color);
+}

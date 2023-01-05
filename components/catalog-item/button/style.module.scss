@@ -1,0 +1,20 @@
+.Card__button {
+  height: 40px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90px;
+  border: none;
+  background-color: var(--color-blue);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+.Card__button_atCart {
+  min-width: 175px;
+  background-color: var(--color-green);
+}

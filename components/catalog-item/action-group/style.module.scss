@@ -1,0 +1,54 @@
+.Card__actionGroup {
+  display: flex;
+  justify-content: space-between;
+}
+.Card__buttonWrapper {
+  height: 40px;
+  min-width: 175px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 90px;
+  border: none;
+  background-color: var(--background);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+}
+.Card__counter {
+  min-width: 75px;
+  height: 100%;
+  display: flex;
+  gap: 11px;
+  justify-content: center;
+  
+  .Card__decr,
+  .Card__incr {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0.3;
+    cursor: pointer;
+  }
+  .Card__incr {
+    position: relative;
+  }
+  .Card__incr .Card__line:last-child {
+    position: absolute;
+    transform: rotate(90deg);
+  }
+  .Card__line {
+    width: 10px;
+    height: 2px;
+    background-color: var(--font-color);
+  }
+  .Card__total {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 0.8;
+  }
+}
+

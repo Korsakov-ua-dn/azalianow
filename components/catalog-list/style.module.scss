@@ -1,0 +1,51 @@
+.Catalog {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-auto-rows: 462px;
+  //grid-template-rows: repeat(3, 340px);
+  grid-gap: 30px;
+  margin: 30px 0;
+}
+
+// Устройства Small (телефоны с горизонтальной ориентацией, 576 пикселей и выше)
+@media (min-width: 576px) {
+  .Catalog {
+    grid-template-columns: repeat(2, calc(100% / 2 - 15px));
+  }
+}
+
+// Устройства Medium (планшеты, 768 пикселей и выше)
+@media (min-width: 768px) {
+  .Catalog {
+    grid-template-columns: repeat(2, calc(100% / 2 - 15px));
+  }
+}
+
+// Устройства Large (настольные компьютеры, 992 пикселей и выше)
+@media (min-width: 992px) {
+  .Catalog {
+    grid-template-columns: repeat(3, calc(100% / 3 - 20px));
+  }
+}
+
+// Устройства X-Large (большие настольные компьютеры, 1200 пикселей и выше)
+@media (min-width: 1200px) {
+  .Catalog {
+    grid-template-columns: repeat(4, calc(100% / 4 - 22px));
+  }
+}
+
+// Устройства XX-Large (большие настольные компьютеры, 1400 пикселей и выше)
+@media (min-width: 1400px) {
+  .Catalog {
+    grid-template-columns: repeat(4, calc(100% / 4 - 22px));
+  }
+}
+
+// 
+@media (min-width: 1920px) {
+  .Catalog {
+    grid-template-columns: repeat(5, calc(100% / 5 - 24px));
+  }
+}

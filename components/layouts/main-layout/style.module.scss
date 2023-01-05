@@ -1,0 +1,49 @@
+.Layout {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+// Устройства Small (телефоны с горизонтальной ориентацией, 576 пикселей и выше)
+@media (min-width: 576px) {
+  .Layout {
+    padding: 0 16px;
+  }
+}
+
+// Устройства Medium (планшеты, 768 пикселей и выше)
+@media (min-width: 768px) {
+  .Layout {
+    padding: 0 24px;
+  }
+}
+
+// Устройства Large (настольные компьютеры, 992 пикселей и выше)
+@media (min-width: 992px) {
+  .Layout {
+    padding: 0 24px;
+  }
+}
+
+// Устройства X-Large (большие настольные компьютеры, 1200 пикселей и выше)
+@media (min-width: 1200px) {
+  .Layout {
+    padding: 0 32px;
+  }
+}
+
+// Устройства XX-Large (большие настольные компьютеры, 1400 пикселей и выше)
+@media (min-width: 1400px) {
+  .Layout {
+    padding: 0 32px;
+  }
+}
+
+// 
+@media (min-width: 1920px) {
+  .Layout {
+    padding: 0 70px;
+  }
+}
+

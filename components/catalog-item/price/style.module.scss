@@ -1,0 +1,10 @@
+.Card__price {
+  color: var(--font-color-grey);
+  margin-bottom: 9px;
+  
+  strong {
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--font-color);
+  }
+}
