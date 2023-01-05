@@ -1,6 +1,4 @@
-import React, {
-  useCallback,
-} from "react";
+import React, { useCallback } from "react";
 import { Product } from "../../api";
 import MainLayout from "../../components/layouts/main-layout";
 import Pagination from "../../components/pagination";
@@ -9,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { productsActions } from "../../store/products-slice";
 import { cartActions } from "../../store/cart-slice";
 import CatalogItemContainer from "../catalog-item-container";
-import { favoritesActions } from "../../store/favorites-slice";
+import { favoritesActions } from "../../store/cart-slice copy";
 
 type PropsType = {
   products: Product[];
