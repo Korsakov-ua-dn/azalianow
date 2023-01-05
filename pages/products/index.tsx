@@ -1,9 +1,8 @@
 import {
-  GetServerSideProps,
   GetStaticProps,
   InferGetStaticPropsType,
 } from "next";
-import React, { useEffect, useLayoutEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Product, productsApi } from "../../api";
 import PropductsContainer from "../../containers/propducts-container";
 import { useAppDispatch, useAppSelector } from "../../hooks";
@@ -27,7 +26,7 @@ const Products = ({
       const width = window.innerWidth;
       switch(true) {
         case width < 576: 
-          select.limit !== 1 && dispatch(productsActions.setLimit(1));
+          select.limit !== 1 && dispatch(productsActions.setLimit(3));
           break;
         case width < 992: 
           select.limit !== 3 && dispatch(productsActions.setLimit(3));

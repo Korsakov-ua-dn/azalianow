@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // slice
-const initialState: ProductsStateType = {
+const initialState: CartStateType = {
   data: {} as Data,
 };
 
@@ -21,7 +21,7 @@ export const cartActions = cartSlice.actions;
 export default cartSlice.reducer;
 
 // types
-type ProductsStateType = {
+type CartStateType = {
   data: Data;
 };
 
