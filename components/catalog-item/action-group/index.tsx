@@ -17,7 +17,9 @@ const ActionGroup: React.FC<PropsType> = (props) => {
   return (
     <div className={s.Card__actionGroup}>
       <span className={s.Card__buttonWrapper}>
-        <Button isAtCart={props.isAtCart} addToCart={props.addToCart} />
+        <Button isActive={props.isAtCart} action={props.addToCart}>
+          { props.isAtCart ? "В корзине" : "В корзину" }
+        </Button>
         {!props.isAtCart && (
           <div className={s.Card__counter}>
             <div className={s.Card__decr} onClick={props.onDecrement}>

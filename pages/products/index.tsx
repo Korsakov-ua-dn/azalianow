@@ -25,13 +25,10 @@ const Products = ({
     onResize: useCallback(() => {
       const width = window.innerWidth;
       switch(true) {
-        case width < 576: 
+        case width < 768: 
           select.limit !== 1 && dispatch(productsActions.setLimit(3));
           break;
-        case width < 992: 
-          select.limit !== 3 && dispatch(productsActions.setLimit(3));
-          break;
-        case width < 1200: 
+        case width < 1400: 
           select.limit !== 5 && dispatch(productsActions.setLimit(5));
           break;
         case width < 1920: 

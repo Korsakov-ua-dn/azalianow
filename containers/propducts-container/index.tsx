@@ -7,7 +7,8 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { productsActions } from "../../store/products-slice";
 import { cartActions } from "../../store/cart-slice";
 import CatalogItemContainer from "../catalog-item-container";
-import { favoritesActions } from "../../store/cart-slice copy";
+import { favoritesActions } from "../../store/favorites-slice";
+import ShowMore from "../../components/show-more";
 
 type PropsType = {
   products: Product[];
@@ -22,26 +23,32 @@ const ProductsContainer: React.FC<PropsType> = (props) => {
     total: state.products.total,
     page: state.products.page,
     limit: state.products.limit,
+    portion: state.products.portion,
     cart: state.cart.data,
     loading: state.products.loading,
     error: state.products.error,
   }));
 
   const callbacks = {
-    // Пагианция
+    // Pagiancia
     onPaginate: useCallback(
       (page: number) => dispatch(productsActions.setPage(page)),
       [dispatch]
     ),
-    // Добавление в корзину
+    // Add to cart
     addToCart: useCallback(
       (id: number, total: number) =>
         dispatch(cartActions.addToCart({ id, total })),
       [dispatch]
     ),
-    // Добавление в избранное
+    // Adding to favorites
     addToFavorites: useCallback(
       (id: number) => dispatch(favoritesActions.addToFavorites(id)),
+      [dispatch]
+    ),
+    // Loading a portion of product cards
+    showMore: useCallback(
+      () => dispatch(productsActions.setPortion()),
       [dispatch]
     ),
   };
@@ -50,8 +57,8 @@ const ProductsContainer: React.FC<PropsType> = (props) => {
     catalogItem: useCallback(
       (product: Product, i: number) => {
         if (
-          i < select.limit * select.page &&
-          i >= select.limit * (select.page - 1)
+          i < select.limit * select.page * select.portion &&
+          i >= select.limit * (select.page - 1) * select.portion
         ) {
           return (
             <CatalogItemContainer
@@ -63,7 +70,13 @@ const ProductsContainer: React.FC<PropsType> = (props) => {
           );
         }
       },
-      [callbacks.addToCart, callbacks.addToFavorites, select.limit, select.page]
+      [
+        callbacks.addToCart,
+        callbacks.addToFavorites,
+        select.limit,
+        select.page,
+        select.portion,
+      ]
     ),
   };
 
@@ -79,6 +92,10 @@ const ProductsContainer: React.FC<PropsType> = (props) => {
         limit={select.limit}
         indent={1}
         onChange={callbacks.onPaginate}
+      />
+      <ShowMore
+        showMore={callbacks.showMore}
+        isActive={select.products.length > select.limit * select.portion}
       />
     </MainLayout>
   );

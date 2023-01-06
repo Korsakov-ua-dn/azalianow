@@ -12,9 +12,10 @@ type PropsType = {
 const CatalogList: React.FC<PropsType> = (props) => {
   return (
     <ul className={s.Catalog}>
-      <li className={`${cardStyle.Catalog__item} `}>
+      <li className={`${cardStyle.Catalog__item}`}>
         <h3>Всё для комфортной работы</h3>
         <Image
+          className={s.Catalog__banner}
           src="/images/banner.png"
           alt="- 25% на товары для кабинета"
           width={332}
@@ -22,6 +23,7 @@ const CatalogList: React.FC<PropsType> = (props) => {
           priority
         />
       </li>
+
       {props.products.map((product, i) => props.renderItem(product, i))}
     </ul>
   );

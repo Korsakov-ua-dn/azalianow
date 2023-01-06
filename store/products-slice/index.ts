@@ -20,6 +20,7 @@ const initialState: ProductsStateType = {
   total: 20,
   page: 1,
   limit: 9,
+  portion: 1,
   loading: false,
   error: null,
 }
@@ -38,6 +39,9 @@ const productsSlice = createSlice({
     },
     setLimit(state, action) {
       state.limit = action.payload
+    },
+    setPortion(state) {
+      state.portion += 1
     },
   },
   extraReducers: (builder) => {
@@ -70,6 +74,7 @@ type ProductsStateType = {
   total: number;
   page: number;
   limit: number;
+  portion: number;
   loading: boolean;
   error: string | null;
 }
