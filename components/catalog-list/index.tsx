@@ -14,14 +14,16 @@ const CatalogList: React.FC<PropsType> = (props) => {
     <ul className={s.Catalog}>
       <li className={`${cardStyle.Catalog__item}`}>
         <h3>Всё для комфортной работы</h3>
-        <Image
-          className={s.Catalog__banner}
-          src="/images/banner.png"
-          alt="- 25% на товары для кабинета"
-          width={332}
-          height={340}
-          priority
-        />
+        <a href="#">
+          <Image
+            className={s.Catalog__banner}
+            src="/images/banner.png"
+            alt="- 25% на товары для кабинета"
+            width={332}
+            height={340}
+            priority
+          />
+        </a>
       </li>
 
       {props.products.map((product, i) => props.renderItem(product, i))}
